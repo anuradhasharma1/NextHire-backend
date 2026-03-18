@@ -5,6 +5,10 @@ const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 
 
+//reg and login requirements
+if (!name || !email || !password || !role) {
+    return res.status(400).json({ message: "All fields are required!" });
+}
 
 //Register
 router.post('/register', async (req, res) => {
