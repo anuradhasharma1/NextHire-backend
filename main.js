@@ -4,6 +4,8 @@ require('dotenv').config();
 const cors =require('cors');
 const app = express()
 const port = process.env.PORT
+const authRoutes = require('./routes/authRoutes');
+const jobRoutes = require('./routes/jobRoutes');
 
 
 app.use(cors());
@@ -14,6 +16,9 @@ mongoose.connect(process.env.MONGO_URI)
     .then(() => console.log("MongoDbConnected"))
     .catch((err) => console.log("Error:", err))
 
+
+app.use('/api/auth', authRoutes);
+app.use('/api/jobs', jobRoutes);
 
 
 app.listen(port, () => {
