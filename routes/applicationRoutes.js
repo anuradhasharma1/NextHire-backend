@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const Application = require('../models/Application');
-const Job = require('../models/Job');
-const verifyToken = require('../middleware/verifyToken');
+const Application = require('../models/application');
+const Job = require('../models/Job');  
+const verifyToken = require('../Middleware/verifyToken')
 
 // POST apply for a job — candidates only
 router.post('/:id/apply', verifyToken, async (req, res) => {
