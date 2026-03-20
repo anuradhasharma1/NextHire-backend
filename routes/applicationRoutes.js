@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Application = require('../models/application');
+const Application = require('../models/Application');
 const Job = require('../models/Job');
 const verifyToken = require('../middleware/verifyToken');
 
